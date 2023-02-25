@@ -8,8 +8,10 @@ public class DuplicateCharactersDemo {
         System.out.println(findDuplicateChars("Bijan Nayak"));
 
     }
-
     public static Map<Character, Long> findDuplicateChars(String value) {
-        return value.chars().mapToObj(c -> (char) c).collect(Collectors.groupingBy(character -> character, Collectors.counting()));
+        return value.chars().mapToObj(c -> (char) c)
+                .collect(Collectors.groupingBy(
+                        character -> character, Collectors.counting()
+                ));
     }
 }
